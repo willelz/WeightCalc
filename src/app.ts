@@ -37,7 +37,7 @@ class Pipe implements Shape {
     calc(density: number) {
         const r = this.diameter / 2;
         const ir = r - this.thickness;
-        return (r * r - ir * ir) * Math.PI * this.height;
+        return (r * r - ir * ir) * Math.PI * this.height * density;
     }
 }
 

@@ -47,7 +47,7 @@ var Pipe = /** @class */ (function () {
     Pipe.prototype.calc = function (density) {
         var r = this.diameter / 2;
         var ir = r - this.thickness;
-        return (r * r - ir * ir) * Math.PI * this.height;
+        return (r * r - ir * ir) * Math.PI * this.height * density;
     };
     return Pipe;
 }());
