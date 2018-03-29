@@ -93,25 +93,25 @@ var ShapeFactory = /** @class */ (function () {
         var shapeType = this.getShapeType();
         switch (shapeType) {
             case ShapeType.cuboid:
-                var v = getValue('cuboid_vertical');
-                var h = getValue('cuboid_horizontal');
-                var he = getValue('cuboid_height');
+                var v = getValue('cuboid_vertical') / 1000; //mmを期待しているためMにする
+                var h = getValue('cuboid_horizontal') / 1000;
+                var he = getValue('cuboid_height') / 1000;
                 return new Cuboid(v, h, he);
             case ShapeType.cylinder:
-                var di = getValue('cylinder_diameter');
-                var ch = getValue('cylinder_height');
+                var di = getValue('cylinder_diameter') / 1000;
+                var ch = getValue('cylinder_height') / 1000;
                 return new Cylinder(di, ch);
             case ShapeType.hbeam:
-                var hv = getValue('hbeam_vertical');
-                var hh = getValue('hbeam_horizontal');
-                var hvw = getValue('hbeam_vertical_width');
-                var hhw = getValue('hbeam_horizontal_width');
-                var hl = getValue('hbeam_length');
+                var hv = getValue('hbeam_vertical') / 1000;
+                var hh = getValue('hbeam_horizontal') / 1000;
+                var hvw = getValue('hbeam_vertical_width') / 1000;
+                var hhw = getValue('hbeam_horizontal_width') / 1000;
+                var hl = getValue('hbeam_length') / 1000;
                 return new HBeam(hv, hh, hvw, hhw, hl);
             case ShapeType.pipe:
-                var pd = getValue('pipe_diameter');
-                var ph = getValue('pipe_height');
-                var pt = getValue('pipe_thickness');
+                var pd = getValue('pipe_diameter') / 1000;
+                var ph = getValue('pipe_height') / 1000;
+                var pt = getValue('pipe_thickness') / 1000;
                 return new Pipe(pd, ph, pt);
             default:
                 throw new Error("shapeType Error");
@@ -124,8 +124,8 @@ function calc() {
     var shape = new ShapeFactory().create();
     ;
     var d = getValue('blood');
-    var ans = shape.calc(d);
+    var ans = shape.calc(d) * 1000; //トンが帰ってくるためkgにする
     var ansel = document.getElementById('answer');
-    ansel.innerText = String(ans);
+    ansel.innerText = ans.toFixed(2); //小数点以下2桁までにする
 }
 //# sourceMappingURL=app.js.map

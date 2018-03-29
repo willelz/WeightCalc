@@ -7,7 +7,7 @@ class Cuboid implements Shape {
     public constructor(private vertical: number, private horizontal: number, private height: number) {
     }
     public calc(density: number) {
-        return this.vertical * this.horizontal * this.height * density
+        return this.vertical * this.horizontal * this.height * density;
     }
 }
 
@@ -83,25 +83,25 @@ class ShapeFactory {
 
         switch (shapeType) {
             case ShapeType.cuboid:
-                const v = getValue('cuboid_vertical');
-                const h = getValue('cuboid_horizontal');
-                const he = getValue('cuboid_height');
+                const v = getValue('cuboid_vertical') / 1000;  //mmを期待しているためMにする
+                const h = getValue('cuboid_horizontal') / 1000;
+                const he = getValue('cuboid_height') / 1000;
                 return new Cuboid(v, h, he);
             case ShapeType.cylinder:
-                const di = getValue('cylinder_diameter');
-                const ch = getValue('cylinder_height');
+                const di = getValue('cylinder_diameter') / 1000;
+                const ch = getValue('cylinder_height') / 1000;
                 return new Cylinder(di, ch);
             case ShapeType.hbeam:
-                const hv = getValue('hbeam_vertical');
-                const hh = getValue('hbeam_horizontal');
-                const hvw = getValue('hbeam_vertical_width');
-                const hhw = getValue('hbeam_horizontal_width');
-                const hl = getValue('hbeam_length');
+                const hv = getValue('hbeam_vertical') / 1000;
+                const hh = getValue('hbeam_horizontal') / 1000;
+                const hvw = getValue('hbeam_vertical_width') / 1000;
+                const hhw = getValue('hbeam_horizontal_width') / 1000;
+                const hl = getValue('hbeam_length') / 1000;
                 return new HBeam(hv, hh, hvw, hhw, hl);
             case ShapeType.pipe:
-                const pd = getValue('pipe_diameter');
-                const ph = getValue('pipe_height');
-                const pt = getValue('pipe_thickness');
+                const pd = getValue('pipe_diameter') / 1000;
+                const ph = getValue('pipe_height') / 1000;
+                const pt = getValue('pipe_thickness') / 1000;
                 return new Pipe(pd, ph, pt);
             default:
                 throw new Error("shapeType Error");
@@ -113,7 +113,7 @@ class ShapeFactory {
 function calc() {
     const shape = new ShapeFactory().create();;
     const d = getValue('blood');
-    const ans = shape.calc(d);
+    const ans = shape.calc(d) * 1000; //トンが帰ってくるためkgにする
     const ansel = <HTMLInputElement>document.getElementById('answer');
-    ansel.innerText = String(ans);
+    ansel.innerText = ans.toFixed(2); //小数点以下2桁までにする
 }
