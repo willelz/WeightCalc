@@ -102,6 +102,7 @@ class ShapeFactory {
                 const pd = getValue('pipe_diameter');
                 const ph = getValue('pipe_height');
                 const pt = getValue('pipe_thickness');
+                return new Pipe(pd, ph, pt);
             default:
                 throw new Error("shapeType Error");
         }

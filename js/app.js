@@ -112,6 +112,7 @@ var ShapeFactory = /** @class */ (function () {
                 var pd = getValue('pipe_diameter');
                 var ph = getValue('pipe_height');
                 var pt = getValue('pipe_thickness');
+                return new Pipe(pd, ph, pt);
             default:
                 throw new Error("shapeType Error");
         }
