@@ -27,6 +27,10 @@
             link.className = 'active';
             current.page = page;
             current.menu = link;
+
+            //結果をリセット
+            const ans = <HTMLInputElement>document.getElementById('answer');
+            ans.innerText = "0";
             return false;
         };
     }

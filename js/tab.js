@@ -31,6 +31,9 @@
             link.className = 'active';
             current.page = page;
             current.menu = link;
+            //結果をリセット
+            var ans = document.getElementById('answer');
+            ans.innerText = "0";
             return false;
         };
     }
