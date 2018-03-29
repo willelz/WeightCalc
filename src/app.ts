@@ -2,6 +2,7 @@ interface Shape {
     calc(density: number): number;
 }
 
+//直方体
 class Cuboid implements Shape {
     public constructor(private vertical: number, private horizontal: number, private height: number) {
     }
@@ -10,6 +11,7 @@ class Cuboid implements Shape {
     }
 }
 
+//円柱
 class Cylinder implements Shape {
     public constructor(private diameter: number, private height: number) {
     }
