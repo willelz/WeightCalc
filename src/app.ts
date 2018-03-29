@@ -16,7 +16,8 @@ class Cylinder implements Shape {
     public constructor(private diameter: number, private height: number) {
     }
     public calc(density: number) {
-        return this.diameter / 2 * this.height * density;
+        const r = this.diameter / 2;
+        return r * r * Math.PI * this.height * density;
     }
 }
 

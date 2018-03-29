@@ -18,7 +18,8 @@ var Cylinder = /** @class */ (function () {
         this.height = height;
     }
     Cylinder.prototype.calc = function (density) {
-        return this.diameter / 2 * this.height * density;
+        var r = this.diameter / 2;
+        return r * r * Math.PI * this.height * density;
     };
     return Cylinder;
 }());
