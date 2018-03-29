@@ -18,6 +18,7 @@ class Cylinder implements Shape {
     }
 }
 
+//HTMLInputElementのvalueを得る
 const getValue = (searchID: string): number => {
     const element = <HTMLInputElement>document.getElementById(searchID);
     return Number(element.value);
@@ -29,9 +30,10 @@ enum ShapeType {
 }
 
 class ShapeFactory {
+    //今表示されているものを返す
     private getShapeType(): ShapeType {
         const content = document.getElementById("tab_content");
-        if (!content) throw Error;
+        if (!content) throw new Error("No tab_content");
         const shapes = content.getElementsByTagName("section");
 
         for (let i = 0; i < shapes.length; i++) {
@@ -44,8 +46,9 @@ class ShapeFactory {
                 }
             }
         }
-        throw Error;
+        throw new Error("No block element");
     }
+    //今表示されている形の値をセットして作る
     public create(): Shape {
         const shapeType = this.getShapeType();
 
@@ -59,6 +62,8 @@ class ShapeFactory {
                 const di = getValue('cylinder_diameter');
                 const ch = getValue('cylinder_height');
                 return new Cylinder(di, ch);
+            default:
+                throw new Error("shapeType Error");
         }
     }
 }
