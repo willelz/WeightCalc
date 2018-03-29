@@ -37,6 +37,20 @@ var HBeam = /** @class */ (function () {
     };
     return HBeam;
 }());
+//パイプ形
+var Pipe = /** @class */ (function () {
+    function Pipe(diameter, height, thickness) {
+        this.diameter = diameter;
+        this.height = height;
+        this.thickness = thickness;
+    }
+    Pipe.prototype.calc = function (density) {
+        var r = this.diameter / 2;
+        var ir = r - this.thickness;
+        return (r * r - ir * ir) * Math.PI * this.height;
+    };
+    return Pipe;
+}());
 //HTMLInputElementのvalueを得る
 var getValue = function (searchID) {
     var element = document.getElementById(searchID);
@@ -47,6 +61,7 @@ var ShapeType;
     ShapeType[ShapeType["cuboid"] = 0] = "cuboid";
     ShapeType[ShapeType["cylinder"] = 1] = "cylinder";
     ShapeType[ShapeType["hbeam"] = 2] = "hbeam";
+    ShapeType[ShapeType["pipe"] = 3] = "pipe";
 })(ShapeType || (ShapeType = {}));
 var ShapeFactory = /** @class */ (function () {
     function ShapeFactory() {
@@ -66,6 +81,8 @@ var ShapeFactory = /** @class */ (function () {
                         return ShapeType.cylinder;
                     case 'hbeam':
                         return ShapeType.hbeam;
+                    case 'pipe':
+                        return ShapeType.pipe;
                 }
             }
         }
@@ -91,6 +108,10 @@ var ShapeFactory = /** @class */ (function () {
                 var hhw = getValue('hbeam_horizontal_width');
                 var hl = getValue('hbeam_length');
                 return new HBeam(hv, hh, hvw, hhw, hl);
+            case ShapeType.pipe:
+                var pd = getValue('pipe_diameter');
+                var ph = getValue('pipe_height');
+                var pt = getValue('pipe_thickness');
             default:
                 throw new Error("shapeType Error");
         }

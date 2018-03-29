@@ -30,6 +30,17 @@ class HBeam implements Shape {
     }
 }
 
+//パイプ形
+class Pipe implements Shape {
+    public constructor(private diameter: number, private height: number, private thickness: number) {
+    }
+    calc(density: number) {
+        const r = this.diameter / 2;
+        const ir = r - this.thickness;
+        return (r * r - ir * ir) * Math.PI * this.height;
+    }
+}
+
 //HTMLInputElementのvalueを得る
 const getValue = (searchID: string): number => {
     const element = <HTMLInputElement>document.getElementById(searchID);
@@ -40,6 +51,7 @@ enum ShapeType {
     cuboid,
     cylinder,
     hbeam,
+    pipe,
 }
 
 class ShapeFactory {
@@ -58,6 +70,8 @@ class ShapeFactory {
                         return ShapeType.cylinder;
                     case 'hbeam':
                         return ShapeType.hbeam;
+                    case 'pipe':
+                        return ShapeType.pipe;
                 }
             }
         }
@@ -84,6 +98,10 @@ class ShapeFactory {
                 const hhw = getValue('hbeam_horizontal_width');
                 const hl = getValue('hbeam_length');
                 return new HBeam(hv, hh, hvw, hhw, hl);
+            case ShapeType.pipe:
+                const pd = getValue('pipe_diameter');
+                const ph = getValue('pipe_height');
+                const pt = getValue('pipe_thickness');
             default:
                 throw new Error("shapeType Error");
         }
