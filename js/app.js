@@ -1,4 +1,5 @@
 "use strict";
+//直方体
 var Cuboid = /** @class */ (function () {
     function Cuboid(vertical, horizontal, height) {
         this.vertical = vertical;
@@ -10,6 +11,7 @@ var Cuboid = /** @class */ (function () {
     };
     return Cuboid;
 }());
+//円柱
 var Cylinder = /** @class */ (function () {
     function Cylinder(diameter, height) {
         this.diameter = diameter;
@@ -20,6 +22,21 @@ var Cylinder = /** @class */ (function () {
     };
     return Cylinder;
 }());
+//H鋼
+var HBeam = /** @class */ (function () {
+    function HBeam(vertical, horizontal, verticalWidth, horizontalWidth, length) {
+        this.vertical = vertical;
+        this.horizontal = horizontal;
+        this.verticalWidth = verticalWidth;
+        this.horizontalWidth = horizontalWidth;
+        this.length = length;
+    }
+    HBeam.prototype.calc = function (density) {
+        return ((this.vertical * this.horizontalWidth) * 2 + this.verticalWidth * this.horizontal) * this.length * density;
+    };
+    return HBeam;
+}());
+//HTMLInputElementのvalueを得る
 var getValue = function (searchID) {
     var element = document.getElementById(searchID);
     return Number(element.value);
@@ -28,14 +45,16 @@ var ShapeType;
 (function (ShapeType) {
     ShapeType[ShapeType["cuboid"] = 0] = "cuboid";
     ShapeType[ShapeType["cylinder"] = 1] = "cylinder";
+    ShapeType[ShapeType["hbeam"] = 2] = "hbeam";
 })(ShapeType || (ShapeType = {}));
 var ShapeFactory = /** @class */ (function () {
     function ShapeFactory() {
     }
+    //今表示されているものを返す
     ShapeFactory.prototype.getShapeType = function () {
         var content = document.getElementById("tab_content");
         if (!content)
-            throw Error;
+            throw new Error("No tab_content");
         var shapes = content.getElementsByTagName("section");
         for (var i = 0; i < shapes.length; i++) {
             if (shapes[i].style.display === 'block') {
@@ -44,11 +63,14 @@ var ShapeFactory = /** @class */ (function () {
                         return ShapeType.cuboid;
                     case 'cylinder':
                         return ShapeType.cylinder;
+                    case 'hbeam':
+                        return ShapeType.hbeam;
                 }
             }
         }
-        throw Error;
+        throw new Error("No block element");
     };
+    //今表示されている形の値をセットして作る
     ShapeFactory.prototype.create = function () {
         var shapeType = this.getShapeType();
         switch (shapeType) {
@@ -61,6 +83,15 @@ var ShapeFactory = /** @class */ (function () {
                 var di = getValue('cylinder_diameter');
                 var ch = getValue('cylinder_height');
                 return new Cylinder(di, ch);
+            case ShapeType.hbeam:
+                var hv = getValue('hbeam_vertical');
+                var hh = getValue('hbeam_horizontal');
+                var hvw = getValue('hbeam_vertical_width');
+                var hhw = getValue('hbeam_horizontal_width');
+                var hl = getValue('hbeam_length');
+                return new HBeam(hv, hh, hvw, hhw, hl);
+            default:
+                throw new Error("shapeType Error");
         }
     };
     return ShapeFactory;
@@ -74,40 +105,4 @@ function calc() {
     var ansel = document.getElementById('answer');
     ansel.innerText = String(ans);
 }
-//タブ切り替え
-(function () {
-    var menu = document.getElementById('menu');
-    var content = document.getElementById('tab_content');
-    if (!menu) {
-        return;
-    }
-    var menus = menu.getElementsByTagName('a');
-    var current;
-    for (var i = 0, l = menus.length; i < l; i++) {
-        tab_init(menus[i], i);
-    }
-    function tab_init(link, index) {
-        var id = link.hash.slice(1);
-        var page = document.getElementById(id);
-        if (!page)
-            return;
-        if (!current) {
-            current = { page: page, menu: link };
-            page.style.display = 'block';
-            link.className = 'active';
-        }
-        else {
-            page.style.display = 'none';
-        }
-        link.onclick = function () {
-            current.page.style.display = 'none';
-            current.menu.className = '';
-            page.style.display = 'block';
-            link.className = 'active';
-            current.page = page;
-            current.menu = link;
-            return false;
-        };
-    }
-})();
 //# sourceMappingURL=app.js.map

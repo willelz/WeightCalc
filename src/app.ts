@@ -20,6 +20,15 @@ class Cylinder implements Shape {
     }
 }
 
+//H鋼
+class HBeam implements Shape {
+    public constructor(private vertical: number, private horizontal: number, private verticalWidth: number, private horizontalWidth: number, private length: number) {
+    }
+    public calc(density: number) {
+        return ((this.vertical * this.horizontalWidth) * 2 + this.verticalWidth * this.horizontal) * this.length * density;
+    }
+}
+
 //HTMLInputElementのvalueを得る
 const getValue = (searchID: string): number => {
     const element = <HTMLInputElement>document.getElementById(searchID);
@@ -29,6 +38,7 @@ const getValue = (searchID: string): number => {
 enum ShapeType {
     cuboid,
     cylinder,
+    hbeam,
 }
 
 class ShapeFactory {
@@ -45,6 +55,8 @@ class ShapeFactory {
                         return ShapeType.cuboid;
                     case 'cylinder':
                         return ShapeType.cylinder;
+                    case 'hbeam':
+                        return ShapeType.hbeam;
                 }
             }
         }
@@ -64,6 +76,13 @@ class ShapeFactory {
                 const di = getValue('cylinder_diameter');
                 const ch = getValue('cylinder_height');
                 return new Cylinder(di, ch);
+            case ShapeType.hbeam:
+                const hv = getValue('hbeam_vertical');
+                const hh = getValue('hbeam_horizontal');
+                const hvw = getValue('hbeam_vertical_width');
+                const hhw = getValue('hbeam_horizontal_width');
+                const hl = getValue('hbeam_length');
+                return new HBeam(hv, hh, hvw, hhw, hl);
             default:
                 throw new Error("shapeType Error");
         }
