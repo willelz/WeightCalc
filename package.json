@@ -20,5 +20,7 @@
   "devDependencies": {
     "typescript": "^2.7.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "purecss": "^1.0.0"
+  }
 }
