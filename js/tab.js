@@ -8,14 +8,14 @@
     }
     var menus = menu.getElementsByTagName('a');
     var current;
-    for (var i = 0, l = menus.length; i < l; i++) {
-        tab_init(menus[i], i);
+    for (var i = 0; i < menus.length; i++) {
+        tab_init(menus[i]);
     }
-    function tab_init(link, index) {
+    function tab_init(link) {
         var id = link.hash.slice(1);
         var page = document.getElementById(id);
         if (!page)
-            return;
+            throw new Error('menuのIDは存在しない');
         if (!current) {
             current = { page: page, menu: link };
             page.style.display = 'block';
@@ -25,16 +25,16 @@
             page.style.display = 'none';
         }
         link.onclick = function () {
+            //カレントを消す
             current.page.style.display = 'none';
-            current.menu.className = '';
             page.style.display = 'block';
-            link.className = 'active';
+            //カレントを自分にする
             current.page = page;
             current.menu = link;
-            //結果をリセット
-            var ans = document.getElementById('answer');
-            ans.innerText = "0";
-            return false;
+            //ページ移動時計算結果をクリア
+            var weight = document.getElementById('weight');
+            weight.value = '';
+            return false; //href属性無効
         };
     }
 })();

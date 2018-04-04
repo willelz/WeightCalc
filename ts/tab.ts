@@ -6,13 +6,14 @@
     let menus = menu.getElementsByTagName('a');
     let current: { page: HTMLElement, menu: HTMLElement };
 
-    for (let i = 0, l = menus.length; i < l; i++) {
-        tab_init(menus[i], i);
+    for (let i = 0; i < menus.length; i++) {
+        tab_init(menus[i]);
     }
-    function tab_init(link: HTMLAnchorElement, index: number) {
+    function tab_init(link: HTMLAnchorElement) {
         const id = link.hash.slice(1);
         const page = document.getElementById(id);
-        if (!page) return;
+        if (!page) throw new Error('menuのIDは存在しない');
+
         if (!current) { // 状態の初期化
             current = { page: page, menu: link };
             page.style.display = 'block';
@@ -21,17 +22,17 @@
             page.style.display = 'none';
         }
         link.onclick = function () {
+            //カレントを消す
             current.page.style.display = 'none';
-            current.menu.className = '';
             page.style.display = 'block';
-            link.className = 'active';
+            //カレントを自分にする
             current.page = page;
             current.menu = link;
 
-            //結果をリセット
-            const ans = <HTMLInputElement>document.getElementById('answer');
-            ans.innerText = "0";
-            return false;
+            //ページ移動時計算結果をクリア
+            const weight = <HTMLInputElement>document.getElementById('weight');
+            weight.value = '';
+            return false; //href属性無効
         };
     }
 })();
