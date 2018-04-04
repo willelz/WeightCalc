@@ -125,7 +125,7 @@ function calc() {
     ;
     var d = getValue('blood');
     var ans = shape.calc(d) * 1000; //トンが帰ってくるためkgにする
-    var ansel = document.getElementById('answer');
-    ansel.innerText = ans.toFixed(2); //小数点以下2桁までにする
+    var weight = document.getElementById('weight');
+    weight.value = ans.toFixed(2); //小数点以下2桁までにする
 }
 //# sourceMappingURL=app.js.map

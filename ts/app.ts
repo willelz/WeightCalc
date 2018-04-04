@@ -114,6 +114,6 @@ function calc() {
     const shape = new ShapeFactory().create();;
     const d = getValue('blood');
     const ans = shape.calc(d) * 1000; //トンが帰ってくるためkgにする
-    const ansel = <HTMLInputElement>document.getElementById('answer');
-    ansel.innerText = ans.toFixed(2); //小数点以下2桁までにする
+    const weight = <HTMLInputElement>document.getElementById('weight');
+    weight.value = ans.toFixed(2); //小数点以下2桁までにする
 }

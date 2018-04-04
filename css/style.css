@@ -1,20 +1,37 @@
-.pure-form .control-group {
-    margin-bottom: 0.5em;
+main{
+    margin: 0 5%;
 }
 
-.pure-form .control-group label{
-    margin-bottom: 0.3em;
-    text-align: left;
-    width: 6em;
+.control-group{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
 }
 
-.pure-form .control-group input{
-    width: 60%;
+.control-group label{
+    padding-right: 7px;
+    flex: initial;
 }
 
-.pure-form .control-group span{
+ .control-group input, select{
+     height: inherit;
+     width: 130px;
+     flex: 3 1 auto;
+}
+
+.control-group span{
+    height: inherit;
+    padding-left: 4px;
 }
 
 .from_title{
     margin-left: 6em;
+}
+
+.calcbutton{
+    margin: 15px;
+}
+
+button{
+    margin: 0 40%;
 }
