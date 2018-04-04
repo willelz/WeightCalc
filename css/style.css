@@ -2,6 +2,25 @@ main{
     margin: 0 5%;
 }
 
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+#menu a{
+    flex: auto;
+    margin: 2px  2px 0px 2px;
+    max-height: 88px;
+    max-width: 88px;
+}
+
+.menu-img{
+    height: 100%;
+    width: 100%;
+}
+
 .control-group{
     display: flex;
     align-items: center;

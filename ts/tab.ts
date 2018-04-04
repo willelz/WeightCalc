@@ -12,7 +12,7 @@
     function tab_init(link: HTMLAnchorElement) {
         const id = link.hash.slice(1);
         const page = document.getElementById(id);
-        if (!page) throw new Error('menuのIDは存在しない');
+        if (!page) throw new Error(id + 'は存在しない');
 
         if (!current) { // 状態の初期化
             current = { page: page, menu: link };

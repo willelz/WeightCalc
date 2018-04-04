@@ -15,7 +15,7 @@
         var id = link.hash.slice(1);
         var page = document.getElementById(id);
         if (!page)
-            throw new Error('menuのIDは存在しない');
+            throw new Error(id + 'は存在しない');
         if (!current) {
             current = { page: page, menu: link };
             page.style.display = 'block';
