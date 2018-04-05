@@ -28,6 +28,7 @@
     </section>
     <main>
         <div id="tab_content">
+            <!-- 直方体 -->
             <section id="cuboid" class="pure-form">
                 <h2 class="from_title">直方体</h2>
                 <div class="control-group">
@@ -50,6 +51,7 @@
                     <span>mm</span>
                 </div>
             </section>
+            <!-- 円柱-->
             <section id="cylinder" class="pure-form">
                 <h2 class="from_title">円柱</h2>
                 <div class="control-group">
@@ -63,6 +65,7 @@
                     <span>mm</span>
                 </div>
             </section>
+            <!-- H型-->
             <section id="hbeam" class="pure-form">
                 <h2 class="form_title">H型</h2>
                 <div class="control-group">
@@ -91,6 +94,7 @@
                     <span>mm</span>
                 </div>
             </section>
+            <!-- パイプ-->
             <section id="pipe" class="pure-form">
                 <h2 class="form_title">パイプ</h2>
                 <div class="control-group">
@@ -111,6 +115,7 @@
             </section>
         </div>
         <section class="pure-form">
+            <!-- 材質選択 -->
             <div class="control-group">
                 <label for="blood">材質</label>
                 <select id="blood">
@@ -118,10 +123,12 @@
                     <option value="2.7">アルミ 2.7</option>
                 </select>
             </div>
+            <!-- 計算ボタン -->
             <div class="pure-controls calcbutton">
                 <button class="pure-button" onclick="calc()">計算</button>
             </div>
             <section class "pure-form">
+                <!-- 計算結果表示 -->
                 <div class="control-group">
                     <label for="weight">重量</label>
                     <input type="number" id="weight">
