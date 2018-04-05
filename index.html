@@ -3,82 +3,145 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>重量計算</title>
+    <link rel="stylesheet" href="node_modules/purecss/build/base-min.css">
+    <link rel="stylesheet" href="node_modules/purecss/build/forms-min.css">
+    <link rel="stylesheet" href="node_modules/purecss/build/buttons-min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+    <section id="menu">
+        <a href="#cuboid">
+            <img class="menu-img" src="img/cuboid.png" alt="直方体">
+        </a>
+        <a href="#cylinder">
+            <img class="menu-img" src="img/cylinder.png" alt="円柱">
+        </a>
+        <a href="#hbeam">
+            <img class="menu-img" src="img/hbeam.png" alt="H型">
+        </a>
+        <a href="#pipe">
+            <img class="menu-img" src="img/pipe.png" alt="パイプ">
+        </a>
+    </section>
     <main>
-        <section id="tabs">
-            <ul id="menu">
-                <li>
-                    <a href="#cuboid">直方体</a>
-                </li>
-                <li>
-                    <a href="#cylinder">円柱</a>
-                </li>
-                <li>
-                    <a href="#hbeam">H型</a>
-                </li>
-                <li>
-                    <a href="#pipe">パイプ</a>
-                </li>
-            </ul>
-        </section>
         <div id="tab_content">
-            <section id="cuboid">
-                <h2>直方体</h2>
-                <label>縦
-                    <input type="number" id="cuboid_vertical" value="vertical" required>mm</label>
-                <label>横
-                    <input type="number" id="cuboid_horizontal" value="horizontal" required>mm</label>
-                <label>高さ
-                    <input type="number" id="cuboid_height" value="height" required>mm</label>
+            <!-- 直方体 -->
+            <section id="cuboid" class="pure-form">
+                <h2 class="from_title">直方体</h2>
+                <div class="control-group">
+                    <label for="cuboid_vertical">
+                        縦
+                    </label>
+                    <input type="number" id="cuboid_vertical" value="vertical" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="cuboid_horizontal">
+                        横
+                    </label>
+                    <input type="number" id="cuboid_horizontal" value="horizontal" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="cuboid_height">高さ</label>
+                    <input type="number" id="cuboid_height" value="height" required>
+                    <span>mm</span>
+                </div>
             </section>
-            <section id="cylinder">
-                <h2>円柱</h2>
-                <label>直径
-                    <input type="number" id="cylinder_diameter" required>mm</label>
-                <label>高さ
-                    <input type="number" id="cylinder_height" required>mm</label>
+            <!-- 円柱-->
+            <section id="cylinder" class="pure-form">
+                <h2 class="from_title">円柱</h2>
+                <div class="control-group">
+                    <label for="cylinder_diameter">直径</label>
+                    <input type="number" id="cylinder_diameter" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="cylinder_height">高さ</label>
+                    <input type="number" id="cylinder_height" required>
+                    <span>mm</span>
+                </div>
             </section>
-            <section id="hbeam">
-                <h2>H型</h2>
-                <label>縦
-                    <input type="number" id="hbeam_vertical" required>mm</label>
-                <label>横
-                    <input type="number" id="hbeam_horizontal" required>mm</label>
-                <label>幅1
-                    <input type="number" id="hbeam_vertical_width" required>mm</label>
-                <label>幅2
-                    <input type="number" id="hbeam_horizontal_width" required>mm</label>
-                <label>長さ
-                    <input type="number" id="hbeam_length" required>mm</label>
+            <!-- H型-->
+            <section id="hbeam" class="pure-form">
+                <h2 class="form_title">H型</h2>
+                <div class="control-group">
+                    <label for="hbeam_vertical">縦</label>
+                    <input type="number" id="hbeam_vertical" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="hbeam_horizontal">横</label>
+                    <input type="number" id="hbeam_horizontal" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="hbeam_horizontal_width">幅1</label>
+                    <input type="number" id="hbeam_horizontal_width" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="hbeam_vertical_width">幅2</label>
+                    <input type="number" id="hbeam_vertical_width" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="hbeam_length">長さ</label>
+                    <input type="number" id="hbeam_length" required>
+                    <span>mm</span>
+                </div>
             </section>
-            <section id="pipe">
-                <h2>パイプ</h2>
-                <label>直径
-                    <input type="number" id="pipe_diameter" required>mm</label>
-                <label>高さ
-                    <input type="number" id="pipe_height" required>mm</label>
-                <label>厚さ
-                    <input type="number" id="pipe_thickness" required>mm</label>
+            <!-- パイプ-->
+            <section id="pipe" class="pure-form">
+                <h2 class="form_title">パイプ</h2>
+                <div class="control-group">
+                    <label for="pipe_diameter">直径</label>
+                    <input type="number" id="pipe_diameter" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="pipe_height">高さ</label>
+                    <input type="number" id="pipe_height" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="pipe_diameter">厚さ</label>
+                    <input type="number" id="pipe_thickness" required>
+                    <span>mm</span>
+                </div>
             </section>
         </div>
-        <section>
-            <label>
-                材質
+        <section class="pure-form">
+            <!-- 材質選択 -->
+            <div class="control-group">
+                <label for="blood">材質</label>
                 <select id="blood">
-                    <option value="7.8">鉄 7.8</option>
-                    <option value="2.7">アルミ 2.7</option>
+                    <option value="7.86">鉄 7.86</option>
+                    <option value="11.36">鉛 11.36</option>
+                    <option value="8.93">銅 8.93</option>
+                    <option value="2.7">アルミニウム 2.7</option>
+                    <option value="4.51">チタン 4.51</option>
                 </select>
-            </label>
-            <button onclick="calc()">計算</button>
-            <p>重さは
-                <span id="answer"></span>kg</p>
+            </div>
+            <!-- 計算ボタン -->
+            <div class="pure-controls calcbutton">
+                <button class="pure-button" onclick="calc()">計算</button>
+            </div>
+            <section class "pure-form">
+                <!-- 計算結果表示 -->
+                <div class="control-group">
+                    <label for="weight">重量</label>
+                    <input type="number" id="weight">
+                    <span>kg</span>
+                </div>
+            </section>
         </section>
     </main>
-    <script src="js/app.js"></script>
     <script src="js/tab.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

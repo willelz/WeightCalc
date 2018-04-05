@@ -1,0 +1,56 @@
+main{
+    margin: 0 5%;
+}
+
+#menu {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+#menu a{
+    flex: auto;
+    margin: 2px  2px 0px 2px;
+    max-height: 88px;
+    max-width: 88px;
+}
+
+.menu-img{
+    height: 100%;
+    width: 100%;
+}
+
+.control-group{
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.control-group label{
+    padding-right: 7px;
+    flex: initial;
+}
+
+ .control-group input, select{
+     height: inherit;
+     width: 130px;
+     flex: 3 1 auto;
+}
+
+.control-group span{
+    height: inherit;
+    padding-left: 4px;
+}
+
+.from_title{
+    text-align: center;
+}
+
+.calcbutton{
+    margin: 15px;
+}
+
+button{
+    margin: 0 40%;
+}
