@@ -33,7 +33,9 @@ var HBeam = /** @class */ (function () {
         this.length = length;
     }
     HBeam.prototype.calc = function (density) {
-        return ((this.vertical * this.horizontalWidth) * 2 + this.verticalWidth * this.horizontal) * this.length * density;
+        var ll = (this.vertical * this.verticalWidth) * 2; //縦2つ
+        var hh = (this.horizontal - this.verticalWidth * 2) * this.horizontalWidth; //横
+        return (ll + hh) * this.length * density;
     };
     return HBeam;
 }());
@@ -104,10 +106,10 @@ var ShapeFactory = /** @class */ (function () {
             case ShapeType.hbeam:
                 var hv = getValue('hbeam_vertical') / 1000;
                 var hh = getValue('hbeam_horizontal') / 1000;
-                var hvw = getValue('hbeam_vertical_width') / 1000;
-                var hhw = getValue('hbeam_horizontal_width') / 1000;
+                var t2 = getValue('hbeam_vertical_width') / 1000;
+                var t1 = getValue('hbeam_horizontal_width') / 1000;
                 var hl = getValue('hbeam_length') / 1000;
-                return new HBeam(hv, hh, hvw, hhw, hl);
+                return new HBeam(hv, hh, t2, t1, hl);
             case ShapeType.pipe:
                 var pd = getValue('pipe_diameter') / 1000;
                 var ph = getValue('pipe_height') / 1000;

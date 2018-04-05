@@ -26,7 +26,9 @@ class HBeam implements Shape {
     public constructor(private vertical: number, private horizontal: number, private verticalWidth: number, private horizontalWidth: number, private length: number) {
     }
     public calc(density: number) {
-        return ((this.vertical * this.horizontalWidth) * 2 + this.verticalWidth * this.horizontal) * this.length * density;
+        const ll = (this.vertical * this.verticalWidth) * 2;  //縦2つ
+        const hh = (this.horizontal - this.verticalWidth * 2) * this.horizontalWidth;  //横
+        return (ll + hh) * this.length * density;
     }
 }
 
@@ -94,10 +96,10 @@ class ShapeFactory {
             case ShapeType.hbeam:
                 const hv = getValue('hbeam_vertical') / 1000;
                 const hh = getValue('hbeam_horizontal') / 1000;
-                const hvw = getValue('hbeam_vertical_width') / 1000;
-                const hhw = getValue('hbeam_horizontal_width') / 1000;
+                const t2 = getValue('hbeam_vertical_width') / 1000;
+                const t1 = getValue('hbeam_horizontal_width') / 1000;
                 const hl = getValue('hbeam_length') / 1000;
-                return new HBeam(hv, hh, hvw, hhw, hl);
+                return new HBeam(hv, hh, t2, t1, hl);
             case ShapeType.pipe:
                 const pd = getValue('pipe_diameter') / 1000;
                 const ph = getValue('pipe_height') / 1000;
