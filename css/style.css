@@ -12,8 +12,8 @@ main{
 #menu a{
     flex: auto;
     margin: 2px  2px 0px 2px;
-    max-height: 88px;
-    max-width: 88px;
+    max-height: 85px;
+    max-width: 85px;
 }
 
 .menu-img{
@@ -45,6 +45,11 @@ main{
 
 .from_title{
     text-align: center;
+}
+
+.from_img{
+    height: 100px;
+    width: 100px;
 }
 
 .calcbutton{
