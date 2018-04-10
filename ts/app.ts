@@ -43,6 +43,17 @@ class Pipe implements Shape {
     }
 }
 
+//チャンネル
+class Channel implements Shape {
+    public constructor(private vertical: number, private horizontal: number, private length: number, private t1: number, private t2: number) {
+    }
+    calc(density: number) {
+        const ll = ((this.vertical - this.t1) * this.t2) * 2;
+        const hh = this.horizontal * this.t1;
+        return (ll + hh) * this.length * density;
+    }
+}
+
 //HTMLInputElementのvalueを得る
 const getValue = (searchID: string): number => {
     const element = <HTMLInputElement>document.getElementById(searchID);
@@ -54,6 +65,7 @@ enum ShapeType {
     cylinder,
     hbeam,
     pipe,
+    channel,
 }
 
 class ShapeFactory {
@@ -74,6 +86,8 @@ class ShapeFactory {
                         return ShapeType.hbeam;
                     case 'pipe':
                         return ShapeType.pipe;
+                    case 'channel':
+                        return ShapeType.channel;
                 }
             }
         }
@@ -105,6 +119,13 @@ class ShapeFactory {
                 const ph = getValue('pipe_height') / 1000;
                 const pt = getValue('pipe_thickness') / 1000;
                 return new Pipe(pd, ph, pt);
+            case ShapeType.channel:
+                const cv = getValue('channel_vertical') / 1000;
+                const chh = getValue('channel_horizontal') / 1000;
+                const cl = getValue('channel_length') / 1000;
+                const ct1 = getValue('channel_t1') / 1000;
+                const ct2 = getValue('channel_t2') / 1000;
+                return new Channel(cv, chh, cl, ct1, ct2);
             default:
                 throw new Error("shapeType Error");
         }

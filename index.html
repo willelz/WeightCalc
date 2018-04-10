@@ -25,7 +25,11 @@
         <a href="#pipe">
             <img class="menu-img" src="img/pipe.svg" alt="パイプ">
         </a>
+        <a href="#channel">
+            <img class="menu-img" src="img/channel.svg" alt="チャンネル">
+        </a>
     </section>
+    <hr>
     <main>
         <div id="tab_content">
             <!-- 直方体 -->
@@ -132,6 +136,45 @@
                         <img class="from_img" src="img/pipe_thickness.svg" alt="厚さ">
                     </label>
                     <input type="number" id="pipe_thickness" required>
+                    <span>mm</span>
+                </div>
+            </section>
+            <!-- チャンネル -->
+            <section id="channel" class="pure-form">
+                <h2 class="from_title">チャンネル</h2>
+                <div class="control-group">
+                    <label for="channel_vertical">
+                        <img class="from_img" src="img/channel_vertical.svg" alt="縦">
+                    </label>
+                    <input type="number" id="channel_vertical" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="channel_horizontal">
+                        <img class="from_img" src="img/channel_horizontal.svg" alt="横">
+                    </label>
+                    <input type="number" id="channel_horizontal" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="channel_length">
+                        <img class="from_img" src="img/channel_length.svg" alt="長さ">
+                    </label>
+                    <input type="number" id="channel_length" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="channel_t1">
+                        <img class="from_img" src="img/channel_t1.svg" alt="幅1">
+                    </label>
+                    <input type="number" id="channel_t1" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="channel_t2">
+                        <img class="from_img" src="img/channel_t2.svg" alt="幅2">
+                    </label>
+                    <input type="number" id="channel_t2" required>
                     <span>mm</span>
                 </div>
             </section>

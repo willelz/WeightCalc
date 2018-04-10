@@ -30,12 +30,19 @@ main{
 .control-group label{
     padding-right: 7px;
     flex: initial;
+    width: 100px;
+    text-align: center;
+    vertical-align: middle;
 }
 
  .control-group input, select{
      height: inherit;
      width: 130px;
      flex: 3 1 auto;
+}
+
+.control-group select{
+    margin-right: 2em;
 }
 
 .control-group span{
