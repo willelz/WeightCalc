@@ -1,14 +1,15 @@
 //タブ切り替え
-(function () {
+export default function tab() {
     const menu = document.getElementById('menu');
     const content = document.getElementById('tab_content');
-    if (!menu) { return; }
+    if (!menu) { throw new Error('menu error'); }
     let menus = menu.getElementsByTagName('a');
     let current: { page: HTMLElement, menu: HTMLElement };
 
     for (let i = 0; i < menus.length; i++) {
         tab_init(menus[i]);
     }
+
     function tab_init(link: HTMLAnchorElement) {
         const id = link.hash.slice(1);
         const page = document.getElementById(id);
@@ -35,4 +36,4 @@
             return false; //href属性無効
         };
     }
-})();
+}

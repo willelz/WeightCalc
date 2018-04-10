@@ -1,3 +1,10 @@
+import "../node_modules/purecss/build/base-min.css";
+import "../node_modules/purecss/build/forms-min.css";
+import "../node_modules/purecss/build/buttons-min.css";
+import '../css/style.css';
+import tab from "./tab";
+tab();
+
 interface Shape {
     calc(density: number): number;
 }
