@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.5705893"
-     inkscape:cx="83.65204"
-     inkscape:cy="79.090363"
+     inkscape:zoom="7.2707245"
+     inkscape:cx="114.23164"
+     inkscape:cy="13.525813"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -44,7 +44,7 @@
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:snap-bbox-edge-midpoints="true" />
+     inkscape:snap-bbox-edge-midpoints="false" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -53,7 +53,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -137,17 +137,17 @@
     <path
        inkscape:connector-curvature="0"
        id="path4202"
-       d="m 117.68592,1027.117 -15,-8.6602"
+       d="m 136.73567,1038.6363 -36.19863,-21.5212"
        style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 118.07494,1046.1788 -15,-8.6602"
-       id="path4246"
+       style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.99999988;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 132.89825,1035.4718 -8.68275,15.1812"
+       id="path4269"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
-       d="m 110.19557,1022.8505 0,18.4782"
-       id="path4269"
+       style="fill:none;fill-rule:evenodd;stroke:#ff0000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 129.17109,1052.5276 92.972456,1031.0064"
+       id="path4145"
        inkscape:connector-curvature="0" />
   </g>
 </svg>
