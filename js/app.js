@@ -53,6 +53,27 @@ var Pipe = /** @class */ (function () {
     };
     return Pipe;
 }());
+//チャンネル
+var Channel = /** @class */ (function () {
+    function Channel(vertical, horizontal, length, t1, t2) {
+        this.vertical = vertical;
+        this.horizontal = horizontal;
+        this.length = length;
+        this.t1 = t1;
+        this.t2 = t2;
+    }
+    Channel.prototype.calc = function (density) {
+        /*
+        const big = this.vertical * this.horizontal * this.length;
+        const small = (this.vertical - this.t1) * (this.horizontal - this.t2 * 2) * this.length;
+        return (big - small) * density;
+        */
+        var ll = ((this.vertical - this.t1) * this.t2) * 2;
+        var hh = this.horizontal * this.t1;
+        return (ll + hh) * this.length * density;
+    };
+    return Channel;
+}());
 //HTMLInputElementのvalueを得る
 var getValue = function (searchID) {
     var element = document.getElementById(searchID);
@@ -64,6 +85,7 @@ var ShapeType;
     ShapeType[ShapeType["cylinder"] = 1] = "cylinder";
     ShapeType[ShapeType["hbeam"] = 2] = "hbeam";
     ShapeType[ShapeType["pipe"] = 3] = "pipe";
+    ShapeType[ShapeType["channel"] = 4] = "channel";
 })(ShapeType || (ShapeType = {}));
 var ShapeFactory = /** @class */ (function () {
     function ShapeFactory() {
@@ -85,6 +107,8 @@ var ShapeFactory = /** @class */ (function () {
                         return ShapeType.hbeam;
                     case 'pipe':
                         return ShapeType.pipe;
+                    case 'channel':
+                        return ShapeType.channel;
                 }
             }
         }
@@ -115,6 +139,13 @@ var ShapeFactory = /** @class */ (function () {
                 var ph = getValue('pipe_height') / 1000;
                 var pt = getValue('pipe_thickness') / 1000;
                 return new Pipe(pd, ph, pt);
+            case ShapeType.channel:
+                var cv = getValue('channel_vertical') / 1000;
+                var chh = getValue('channel_horizontal') / 1000;
+                var cl = getValue('channel_length') / 1000;
+                var ct1 = getValue('channel_t1') / 1000;
+                var ct2 = getValue('channel_t2') / 1000;
+                return new Channel(cv, chh, cl, ct1, ct2);
             default:
                 throw new Error("shapeType Error");
         }
