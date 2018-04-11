@@ -39,21 +39,30 @@
                         <img class="from_img" src="img/out/cuboid_vertical.svg" alt="縦">
                     </label>
                     <input type="number" id="cuboid_vertical" required>
-                    <span>mm</span>
+                    <select id="cuboid_vertical_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="cuboid_horizontal">
                         <img class="from_img" src="img/out/cuboid_horizontal.svg" alt="横">
                     </label>
                     <input type="number" id="cuboid_horizontal" required>
-                    <span>mm</span>
+                    <select id="cuboid_horizontal_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="cuboid_height">
                         <img class="from_img" src="img/out/cuboid_heigt.svg" alt="高さ">
                     </label>
                     <input type="number" id="cuboid_height" required>
-                    <span>mm</span>
+                    <select id="cuboid_height_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
             </section>
             <!-- 円柱-->
@@ -64,14 +73,20 @@
                         <img class="from_img" src="img/out/cylinder_diameter.svg" alt="直径">
                     </label>
                     <input type="number" id="cylinder_diameter" required>
-                    <span>mm</span>
+                    <select id="cylinder_diameter_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="cylinder_height">
                         <img class="from_img" src="img/out/cylinder_height.svg" alt="高さ">
                     </label>
                     <input type="number" id="cylinder_height" required>
-                    <span>mm</span>
+                    <select id="cylinder_height_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
             </section>
             <!-- H型-->
@@ -82,35 +97,50 @@
                         <img class="from_img" src="img/out/hbeam_vertical.svg" alt="縦">
                     </label>
                     <input type="number" id="hbeam_vertical" required>
-                    <span>mm</span>
+                    <select id="hbeam_vertical_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="hbeam_horizontal">
                         <img class="from_img" src="img/out/hbeam_horizontal.svg" alt="横">
                     </label>
                     <input type="number" id="hbeam_horizontal" required>
-                    <span>mm</span>
+                    <select id="hbeam_horizontal_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="hbeam_horizontal_width">
                         <img class="from_img" src="img/out/hbeam_horizontal_width.svg" alt="幅1">
                     </label>
                     <input type="number" id="hbeam_horizontal_width" required>
-                    <span>mm</span>
+                    <select id="hbeam_horizontal_width_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="hbeam_vertical_width">
                         <img class="from_img" src="img/out/hbeam_vertical_width.svg" alt="幅2">
                     </label>
                     <input type="number" id="hbeam_vertical_width" required>
-                    <span>mm</span>
+                    <select id="hbeam_vertical_width_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="hbeam_length">
                         <img class="from_img" src="img/out/hbeam_length.svg" alt="長さ">
                     </label>
                     <input type="number" id="hbeam_length" required>
-                    <span>mm</span>
+                    <select id="hbeam_length_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
             </section>
             <!-- パイプ-->
@@ -121,21 +151,30 @@
                         <img class="from_img" src="img/out/pipe_diameter.svg" alt="直径">
                     </label>
                     <input type="number" id="pipe_diameter" required>
-                    <span>mm</span>
+                    <select id="pipe_diameter_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="pipe_height">
                         <img class="from_img" src="img/out/pipe_heigt.svg" alt="高さ">
                     </label>
                     <input type="number" id="pipe_height" required>
-                    <span>mm</span>
+                    <select id="pipe_height_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="pipe_thickness">
                         <img class="from_img" src="img/out/pipe_thickness.svg" alt="厚さ">
                     </label>
                     <input type="number" id="pipe_thickness" required>
-                    <span>mm</span>
+                    <select id="pipe_thickness_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
             </section>
             <!-- チャンネル -->
@@ -146,35 +185,50 @@
                         <img class="from_img" src="img/out/channel_vertical.svg" alt="縦">
                     </label>
                     <input type="number" id="channel_vertical" required>
-                    <span>mm</span>
+                    <select id="channel_vertical_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="channel_horizontal">
                         <img class="from_img" src="img/out/channel_horizontal.svg" alt="横">
                     </label>
                     <input type="number" id="channel_horizontal" required>
-                    <span>mm</span>
+                    <select id="channel_horizontal_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="channel_length">
                         <img class="from_img" src="img/out/channel_length.svg" alt="長さ">
                     </label>
                     <input type="number" id="channel_length" required>
-                    <span>mm</span>
+                    <select id="channel_length_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="channel_t1">
                         <img class="from_img" src="img/out/channel_t1.svg" alt="幅1">
                     </label>
                     <input type="number" id="channel_t1" required>
-                    <span>mm</span>
+                    <select id="channel_t1_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="channel_t2">
                         <img class="from_img" src="img/out/channel_t2.svg" alt="幅2">
                     </label>
                     <input type="number" id="channel_t2" required>
-                    <span>mm</span>
+                    <select id="channel_t2_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
             </section>
             <!-- アングル -->
@@ -185,35 +239,50 @@
                         <img class="from_img" src="img/out/angle_vertical.svg" alt="縦">
                     </label>
                     <input type="number" id="angle_vertical" required>
-                    <span>mm</span>
+                    <select id="angle_vertical_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="angle_horizontal">
                         <img class="from_img" src="img/out/angle_horizontal.svg" alt="横">
                     </label>
                     <input type="number" id="angle_horizontal" required>
-                    <span>mm</span>
+                    <select id="angle_horizontal_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="angle_length">
                         <img class="from_img" src="img/out/angle_length.svg" alt="長さ">
                     </label>
                     <input type="number" id="angle_length" required>
-                    <span>mm</span>
+                    <select id="angle_length_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="angle_tv">
                         <img class="from_img" src="img/out/angle_tv.svg" alt="縦の幅">
                     </label>
                     <input type="number" id="angle_tv" required>
-                    <span>mm</span>
+                    <select id="angle_tv_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
                 <div class="control-group">
                     <label for="angle_th">
                         <img class="from_img" src="img/out/angle_th.svg" alt="横の幅">
                     </label>
                     <input type="number" id="angle_th" required>
-                    <span>mm</span>
+                    <select id="angle_th_unit" class="unit">
+                        <option value="mm">mm</option>
+                        <option value="M">M</option>
+                    </select>
                 </div>
             </section>
         </div>
