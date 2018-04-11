@@ -54,6 +54,18 @@ class Channel implements Shape {
     }
 }
 
+//アングル
+class Angle implements Shape {
+    public constructor(private vertical: number, private horizontal: number, private length: number, private tv: number, private th: number) {
+    }
+    calc(density: number) {
+        const v = (this.vertical - this.th) * this.tv;
+        const h = this.th * (this.horizontal - this.tv);
+        const o = this.th * this.tv;
+        return (v + h + o) * this.length * density;
+    }
+}
+
 //HTMLInputElementのvalueを得る
 const getValue = (searchID: string): number => {
     const element = <HTMLInputElement>document.getElementById(searchID);
@@ -66,6 +78,7 @@ enum ShapeType {
     hbeam,
     pipe,
     channel,
+    angle,
 }
 
 class ShapeFactory {
@@ -88,6 +101,8 @@ class ShapeFactory {
                         return ShapeType.pipe;
                     case 'channel':
                         return ShapeType.channel;
+                    case 'angle':
+                        return ShapeType.angle;
                 }
             }
         }
@@ -126,6 +141,13 @@ class ShapeFactory {
                 const ct1 = getValue('channel_t1') / 1000;
                 const ct2 = getValue('channel_t2') / 1000;
                 return new Channel(cv, chh, cl, ct1, ct2);
+            case ShapeType.angle:
+                const av = getValue('angle_vertical') / 1000;
+                const ah = getValue('angle_horizontal') / 1000;
+                const al = getValue('angle_length') / 1000;
+                const atv = getValue('angle_tv') / 1000;
+                const ath = getValue('angle_th') / 1000;
+                return new Angle(av, ah, al, atv, ath);
             default:
                 throw new Error("shapeType Error");
         }
