@@ -45,6 +45,11 @@ main{
      flex: 3 1 auto;
 }
 
+.unit{
+    margin-left: 5px;
+    width: 2.5em;
+}
+
 .control-group span{
     height: inherit;
     padding-left: 4px;

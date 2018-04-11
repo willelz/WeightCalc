@@ -66,12 +66,6 @@ class Angle implements Shape {
     }
 }
 
-//HTMLInputElementのvalueを得る
-const getValue = (searchID: string): number => {
-    const element = <HTMLInputElement>document.getElementById(searchID);
-    return Number(element.value);
-}
-
 enum ShapeType {
     cuboid,
     cylinder,
@@ -112,41 +106,57 @@ class ShapeFactory {
     public create(): Shape {
         const shapeType = this.getShapeType();
 
+        //入力からmmを得る
+        const getMeter = (searchID: string): number => {
+            const element = <HTMLInputElement>document.getElementById(searchID);
+            const box = Number(element.value);
+            const unit = <HTMLInputElement>document.getElementById(searchID + '_unit');
+
+            switch (unit.value) {
+                case 'mm':
+                    return box / 1000;
+                case 'M':
+                    return box;
+                default:
+                    throw new Error('unit error');
+            }
+        }
+
         switch (shapeType) {
             case ShapeType.cuboid:
-                const v = getValue('cuboid_vertical') / 1000;  //mmを期待しているためMにする
-                const h = getValue('cuboid_horizontal') / 1000;
-                const he = getValue('cuboid_height') / 1000;
+                const v = getMeter('cuboid_vertical');  //mmを期待しているためMにする
+                const h = getMeter('cuboid_horizontal');
+                const he = getMeter('cuboid_height');
                 return new Cuboid(v, h, he);
             case ShapeType.cylinder:
-                const di = getValue('cylinder_diameter') / 1000;
-                const ch = getValue('cylinder_height') / 1000;
+                const di = getMeter('cylinder_diameter');
+                const ch = getMeter('cylinder_height');
                 return new Cylinder(di, ch);
             case ShapeType.hbeam:
-                const hv = getValue('hbeam_vertical') / 1000;
-                const hh = getValue('hbeam_horizontal') / 1000;
-                const t2 = getValue('hbeam_vertical_width') / 1000;
-                const t1 = getValue('hbeam_horizontal_width') / 1000;
-                const hl = getValue('hbeam_length') / 1000;
+                const hv = getMeter('hbeam_vertical');
+                const hh = getMeter('hbeam_horizontal');
+                const t2 = getMeter('hbeam_vertical_width');
+                const t1 = getMeter('hbeam_horizontal_width');
+                const hl = getMeter('hbeam_length');
                 return new HBeam(hv, hh, t2, t1, hl);
             case ShapeType.pipe:
-                const pd = getValue('pipe_diameter') / 1000;
-                const ph = getValue('pipe_height') / 1000;
-                const pt = getValue('pipe_thickness') / 1000;
+                const pd = getMeter('pipe_diameter');
+                const ph = getMeter('pipe_height');
+                const pt = getMeter('pipe_thickness');
                 return new Pipe(pd, ph, pt);
             case ShapeType.channel:
-                const cv = getValue('channel_vertical') / 1000;
-                const chh = getValue('channel_horizontal') / 1000;
-                const cl = getValue('channel_length') / 1000;
-                const ct1 = getValue('channel_t1') / 1000;
-                const ct2 = getValue('channel_t2') / 1000;
+                const cv = getMeter('channel_vertical');
+                const chh = getMeter('channel_horizontal');
+                const cl = getMeter('channel_length');
+                const ct1 = getMeter('channel_t1');
+                const ct2 = getMeter('channel_t2');
                 return new Channel(cv, chh, cl, ct1, ct2);
             case ShapeType.angle:
-                const av = getValue('angle_vertical') / 1000;
-                const ah = getValue('angle_horizontal') / 1000;
-                const al = getValue('angle_length') / 1000;
-                const atv = getValue('angle_tv') / 1000;
-                const ath = getValue('angle_th') / 1000;
+                const av = getMeter('angle_vertical');
+                const ah = getMeter('angle_horizontal');
+                const al = getMeter('angle_length');
+                const atv = getMeter('angle_tv');
+                const ath = getMeter('angle_th');
                 return new Angle(av, ah, al, atv, ath);
             default:
                 throw new Error("shapeType Error");
@@ -157,7 +167,7 @@ class ShapeFactory {
 //計算ボタンを押した時
 export function calc() {
     const shape = new ShapeFactory().create();;
-    const d = getValue('blood');
+    const d = Number((<HTMLInputElement>document.getElementById('blood')).value);
     const ans = shape.calc(d) * 1000; //トンが帰ってくるためkgにする
     const weight = <HTMLInputElement>document.getElementById('weight');
     weight.value = ans.toFixed(2); //小数点以下2桁までにする
