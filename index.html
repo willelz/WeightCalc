@@ -24,6 +24,9 @@
         <a href="#channel">
             <img class="menu-img" src="img/out/channel.svg" alt="チャンネル">
         </a>
+        <a href="#angle">
+            <img class="menu-img" src="img/out/angle.svg" alt="アングル">
+        </a>
     </section>
     <hr>
     <main>
@@ -35,21 +38,21 @@
                     <label for="cuboid_vertical">
                         <img class="from_img" src="img/out/cuboid_vertical.svg" alt="縦">
                     </label>
-                    <input type="number" id="cuboid_vertical" value="vertical" required>
+                    <input type="number" id="cuboid_vertical" required>
                     <span>mm</span>
                 </div>
                 <div class="control-group">
                     <label for="cuboid_horizontal">
                         <img class="from_img" src="img/out/cuboid_horizontal.svg" alt="横">
                     </label>
-                    <input type="number" id="cuboid_horizontal" value="horizontal" required>
+                    <input type="number" id="cuboid_horizontal" required>
                     <span>mm</span>
                 </div>
                 <div class="control-group">
                     <label for="cuboid_height">
                         <img class="from_img" src="img/out/cuboid_heigt.svg" alt="高さ">
                     </label>
-                    <input type="number" id="cuboid_height" value="height" required>
+                    <input type="number" id="cuboid_height" required>
                     <span>mm</span>
                 </div>
             </section>
@@ -174,6 +177,45 @@
                     <span>mm</span>
                 </div>
             </section>
+            <!-- アングル -->
+            <section id="angle" class="pure-form">
+                <h2 class="from_title">アングル</h2>
+                <div class="control-group">
+                    <label for="angle_vertical">
+                        <img class="from_img" src="img/out/angle_vertical.svg" alt="縦">
+                    </label>
+                    <input type="number" id="angle_vertical" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="angle_horizontal">
+                        <img class="from_img" src="img/out/angle_horizontal.svg" alt="横">
+                    </label>
+                    <input type="number" id="angle_horizontal" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="angle_length">
+                        <img class="from_img" src="img/out/angle_length.svg" alt="長さ">
+                    </label>
+                    <input type="number" id="angle_length" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="angle_tv">
+                        <img class="from_img" src="img/out/angle_tv.svg" alt="縦の幅">
+                    </label>
+                    <input type="number" id="angle_tv" required>
+                    <span>mm</span>
+                </div>
+                <div class="control-group">
+                    <label for="angle_th">
+                        <img class="from_img" src="img/out/angle_th.svg" alt="横の幅">
+                    </label>
+                    <input type="number" id="angle_th" required>
+                    <span>mm</span>
+                </div>
+            </section>
         </div>
         <section class="pure-form">
             <!-- 材質選択 -->
@@ -186,6 +228,7 @@
                     <option value="2.7">アルミニウム 2.7</option>
                     <option value="4.51">チタン 4.51</option>
                 </select>
+                <span>g/cm3</span>
             </div>
             <!-- 計算ボタン -->
             <div class="pure-controls calcbutton">
@@ -195,7 +238,7 @@
                 <!-- 計算結果表示 -->
                 <div class="control-group">
                     <label for="weight">重量</label>
-                    <input type="number" id="weight">
+                    <input type="number" step="0.01" id="weight">
                     <span>kg</span>
                 </div>
             </section>

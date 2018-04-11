@@ -1,5 +1,5 @@
 //タブ切り替え
-export default function tab() {
+export default function () {
     const menu = document.getElementById('menu');
     const content = document.getElementById('tab_content');
     if (!menu) { throw new Error('menu error'); }
