@@ -12,13 +12,17 @@ main{
 #menu a{
     flex: auto;
     margin: 2px  2px 0px 2px;
-    max-height: 85px;
+    width: 85px;
+    height: 85px;
     max-width: 85px;
+    text-align: center;
 }
 
 .menu-img{
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: auto;
+    max-height: 85px;
+    max-width: 85px;
 }
 
 .control-group{
@@ -55,8 +59,10 @@ main{
 }
 
 .from_img{
-    height: 100px;
-    width: 100px;
+    height: auto;
+    width: auto;
+    max-width: 100px;
+    max-height: 100px;
 }
 
 .calcbutton{
