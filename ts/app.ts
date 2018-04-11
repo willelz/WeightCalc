@@ -147,3 +147,5 @@ function calc() {
     const weight = <HTMLInputElement>document.getElementById('weight');
     weight.value = ans.toFixed(2); //小数点以下2桁までにする
 }
+const btn = document.getElementById('calc_button');
+if (btn) btn.onclick = calc;
