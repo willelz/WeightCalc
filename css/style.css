@@ -1,14 +1,14 @@
 main{
-    margin: 0 5%;
+    margin: 0 auto;
+    max-width: 600px;
 }
-
+/*---- メニュー ----*/
 #menu {
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
     justify-content: center;
 }
-
 #menu a{
     flex: auto;
     margin: 2px  2px 0px 2px;
@@ -17,48 +17,41 @@ main{
     max-width: 85px;
     text-align: center;
 }
-
-.menu-img{
+.menu_img{
     height: auto;
     width: auto;
     max-height: 85px;
     max-width: 85px;
 }
 
-.control-group{
+/*---- コントロールグループ ----*/
+.control_group{
     display: flex;
     align-items: center;
     box-sizing: border-box;
+    margin: 5px 0;
 }
-
-.control-group label{
-    padding-right: 7px;
+.control_group label{
+    margin: 0 7px;
     flex: initial;
     width: 100px;
     text-align: center;
     vertical-align: middle;
 }
-
- .control-group input, select{
+ .control_group input, select{
      height: inherit;
      width: 130px;
-     flex: 3 1 auto;
+     flex: 4 1 auto;
 }
-
-.unit{
-    margin-left: 5px;
-    width: 2.5em;
-}
-
-.control-group span{
-    height: inherit;
-    padding-left: 4px;
+.control_group .unit, span{
+    margin: 0 5px;
+    width: 3em;
+    text-align: center;
 }
 
 .from_title{
     text-align: center;
 }
-
 .from_img{
     height: auto;
     width: auto;
@@ -67,9 +60,6 @@ main{
 }
 
 .calcbutton{
-    margin: 15px;
-}
-
-button{
-    margin: 0 40%;
+    margin: 15px 0;
+    text-align: center;
 }

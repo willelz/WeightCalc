@@ -66,6 +66,17 @@ class Angle implements Shape {
     }
 }
 
+//角パイプ
+class SquarePipe implements Shape {
+    public constructor(private vertical: number, private horizontal: number, private height: number, private thickness: number) {
+    }
+    calc(density: number) {
+        const outSide = this.vertical * this.horizontal;
+        const inSide = (this.vertical - 2 * this.thickness) * (this.horizontal - 2 * this.thickness);
+        return (outSide - inSide) * this.height * density;
+    }
+}
+
 enum ShapeType {
     cuboid,
     cylinder,
@@ -73,6 +84,7 @@ enum ShapeType {
     pipe,
     channel,
     angle,
+    squarePipe,
 }
 
 class ShapeFactory {
@@ -97,6 +109,8 @@ class ShapeFactory {
                         return ShapeType.channel;
                     case 'angle':
                         return ShapeType.angle;
+                    case 'square_pipe':
+                        return ShapeType.squarePipe;
                 }
             }
         }
@@ -158,6 +172,12 @@ class ShapeFactory {
                 const atv = getMeter('angle_tv');
                 const ath = getMeter('angle_th');
                 return new Angle(av, ah, al, atv, ath);
+            case ShapeType.squarePipe:
+                const sv = getMeter('square_pipe_vertical');
+                const sh = getMeter('square_pipe_horizontal');
+                const she = getMeter('square_pipe_height');
+                const st = getMeter('square_pipe_thickness');
+                return new SquarePipe(sv, sh, she, st);
             default:
                 throw new Error("shapeType Error");
         }
