@@ -1,14 +1,13 @@
 main{
     margin: 0 5%;
 }
-
+/*---- メニュー ----*/
 #menu {
     display: flex;
     flex-wrap: wrap;
     box-sizing: border-box;
     justify-content: center;
 }
-
 #menu a{
     flex: auto;
     margin: 2px  2px 0px 2px;
@@ -17,7 +16,6 @@ main{
     max-width: 85px;
     text-align: center;
 }
-
 .menu-img{
     height: auto;
     width: auto;
@@ -25,12 +23,12 @@ main{
     max-width: 85px;
 }
 
+/*---- コントロールグループ ----*/
 .control-group{
     display: flex;
     align-items: center;
     box-sizing: border-box;
 }
-
 .control-group label{
     padding-right: 7px;
     flex: initial;
@@ -38,27 +36,19 @@ main{
     text-align: center;
     vertical-align: middle;
 }
-
  .control-group input, select{
      height: inherit;
      width: 130px;
      flex: 3 1 auto;
 }
-
 .unit{
     margin-left: 5px;
     width: 2.5em;
 }
 
-.control-group span{
-    height: inherit;
-    padding-left: 4px;
-}
-
 .from_title{
     text-align: center;
 }
-
 .from_img{
     height: auto;
     width: auto;
