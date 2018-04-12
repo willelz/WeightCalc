@@ -17,7 +17,7 @@ main{
     max-width: 85px;
     text-align: center;
 }
-.menu-img{
+.menu_img{
     height: auto;
     width: auto;
     max-height: 85px;
@@ -25,25 +25,25 @@ main{
 }
 
 /*---- コントロールグループ ----*/
-.control-group{
+.control_group{
     display: flex;
     align-items: center;
     box-sizing: border-box;
     margin: 5px 0;
 }
-.control-group label{
+.control_group label{
     margin: 0 7px;
     flex: initial;
     width: 100px;
     text-align: center;
     vertical-align: middle;
 }
- .control-group input, select{
+ .control_group input, select{
      height: inherit;
      width: 130px;
      flex: 4 1 auto;
 }
-.control-group .unit, span{
+.control_group .unit, span{
     margin: 0 5px;
     width: 3em;
     text-align: center;
