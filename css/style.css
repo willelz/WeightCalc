@@ -1,5 +1,6 @@
 main{
-    margin: 0 5%;
+    margin: 0 auto;
+    max-width: 600px;
 }
 /*---- メニュー ----*/
 #menu {
@@ -28,9 +29,10 @@ main{
     display: flex;
     align-items: center;
     box-sizing: border-box;
+    margin: 5px 0;
 }
 .control-group label{
-    padding-right: 7px;
+    margin: 0 7px;
     flex: initial;
     width: 100px;
     text-align: center;
@@ -39,11 +41,12 @@ main{
  .control-group input, select{
      height: inherit;
      width: 130px;
-     flex: 3 1 auto;
+     flex: 4 1 auto;
 }
-.unit{
-    margin-left: 5px;
-    width: 2.5em;
+.control-group .unit, span{
+    margin: 0 5px;
+    width: 3em;
+    text-align: center;
 }
 
 .from_title{
@@ -57,9 +60,6 @@ main{
 }
 
 .calcbutton{
-    margin: 15px;
-}
-
-button{
-    margin: 0 40%;
+    margin: 15px 0;
+    text-align: center;
 }
