@@ -20,7 +20,9 @@
   },
   "homepage": "https://github.com/willelz/WeightCalc#readme",
   "devDependencies": {
-    "typescript": "^2.7.2"
+    "hyperapp": "^1.2.8",
+    "prettier": "^1.14.2",
+    "typescript": "^2.9.2"
   },
   "dependencies": {
     "purecss": "^1.0.0"
