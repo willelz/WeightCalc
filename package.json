@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html -d docs --public-url ./",
-    "svg": "svgo -f ./img/edit -o ./img/out",
+    "svg": "mkdir img/out; svgo -f ./img/edit -o ./img/out",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/willelz/WeightCalc#readme",
   "devDependencies": {
+    "svgo": "^1.1.1",
     "typescript": "^2.7.2"
   },
   "dependencies": {
