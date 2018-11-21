@@ -113,7 +113,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "dff010f2fff4aa01efb44b203156cced"
+    "revision": "65774e3e5407710e5310746e2f4b7eb3"
   },
   {
     "url": "pipe_diameter.2caeddfb.svg",
@@ -153,6 +153,6 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "/",
-    "revision": "6a69798605603ce859cf2b5b78d04aed"
+    "revision": "1ed1882d6051bd69bad7168b9a923fee"
   }
 ]);
