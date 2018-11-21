@@ -10,3 +10,7 @@ tab();
 //計算登録
 const btn = document.getElementById("calc_button");
 if (btn) btn.onclick = calc;
+
+//hack for parcel-plugin-sw-cache
+const swName = "service-worker.js"
+navigator.serviceWorker.register(swName);

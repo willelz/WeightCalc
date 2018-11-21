@@ -9,6 +9,11 @@
     "svg": "mkdir img/out; svgo -f ./img/edit -o ./img/out",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "cache": {
+    "strategy": "inject",
+    "swSrc": "./ts/sw.js",
+    "swDest": "service-worker.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/willelz/WeightCalc.git"
@@ -21,10 +26,11 @@
   "homepage": "https://github.com/willelz/WeightCalc#readme",
   "devDependencies": {
     "parcel": "^1.10.3",
-    "parcel-plugin-sw-precache": "^1.0.2",
+    "parcel-plugin-sw-cache": "^0.2.6",
     "prettier": "^1.15.2",
     "svgo": "^1.1.1",
-    "typescript": "^2.7.2"
+    "typescript": "^2.7.2",
+    "workbox-build": "^3.6.3"
   },
   "dependencies": {
     "purecss": "^1.0.0"
