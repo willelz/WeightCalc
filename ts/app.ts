@@ -12,5 +12,19 @@ const btn = document.getElementById("calc_button");
 if (btn) btn.onclick = calc;
 
 //hack for parcel-plugin-sw-cache
-const swName = "service-worker.js"
-navigator.serviceWorker.register(swName);
+const swName = "service-worker.js";
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register(swName)
+    .then(function(registration) {
+      // 登録成功
+      console.log(
+        "ServiceWorker registration successful with scope: ",
+        registration.scope
+      );
+    })
+    .catch(function(err) {
+      // 登録失敗 :(
+      console.log("ServiceWorker registration failed: ", err);
+    });
+}
