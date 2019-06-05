@@ -25,12 +25,12 @@
   },
   "homepage": "https://github.com/willelz/WeightCalc#readme",
   "devDependencies": {
-    "parcel": "^1.10.3",
-    "parcel-plugin-sw-cache": "^0.2.6",
-    "prettier": "^1.15.2",
-    "svgo": "^1.1.1",
-    "typescript": "^2.7.2",
-    "workbox-build": "^3.6.3"
+    "parcel": "^1.12.3",
+    "parcel-plugin-sw-cache": "^0.2.7",
+    "prettier": "^1.17.1",
+    "svgo": "^1.2.2",
+    "typescript": "^3.5.1",
+    "workbox-build": "^4.3.1"
   },
   "dependencies": {
     "purecss": "^1.0.0"
