@@ -7,4 +7,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"93ha":[function(require,module,exports) {
 "use strict";require("../node_modules/purecss/build/base-min.css"),require("../node_modules/purecss/build/forms-min.css"),require("../node_modules/purecss/build/buttons-min.css"),require("../css/style.css");var e=require("./shape"),r=s(require("./tab"));function s(e){return e&&e.__esModule?e:{default:e}}(0,r.default)();var c=document.getElementById("calc_button");c&&(c.onclick=e.calc);var i="service-worker.js";"serviceWorker"in navigator&&navigator.serviceWorker.register(i).then(function(e){console.log("ServiceWorker registration successful with scope: ",e.scope)}).catch(function(e){console.log("ServiceWorker registration failed: ",e)});
 },{"../node_modules/purecss/build/base-min.css":"PEJc","../node_modules/purecss/build/forms-min.css":"PEJc","../node_modules/purecss/build/buttons-min.css":"PEJc","../css/style.css":"PEJc","./shape":"Suy6","./tab":"1VBJ"}]},{},["93ha"], null)
-//# sourceMappingURL=app.dc11ecc4.js.map
+//# sourceMappingURL=app.f72665b5.js.map
